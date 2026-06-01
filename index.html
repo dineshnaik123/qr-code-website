@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Studio Pro</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- QR Library -->
+  <script src="https://unpkg.com/qr-code-styling@1.9.2/lib/qr-code-styling.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="logo">
+
+      <div class="logo-box">
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span class="empty"></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h1>QR <em>Studio</em></h1>
+
+    </div>
+
+    <div class="header-badge">
+      PRO GENERATOR
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-layout">
+
+    <!-- LEFT -->
+    <section class="left-panel">
+
+      <!-- HERO -->
+      <div class="hero-card">
+
+        <h2>
+          Create beautiful QR codes instantly.
+        </h2>
+
+        <p>
+          Generate modern QR codes with themes,
+          gradients, logos, WiFi support,
+          SVG export, and premium styling.
+        </p>
+
+      </div>
+
+      <!-- EDITOR -->
+      <div class="editor-card">
+
+        <div class="section-title">
+          QR Content
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+
+          <button class="tab active" data-type="url">
+            URL
+          </button>
+
+          <button class="tab" data-type="text">
+            Text
+          </button>
+
+          <button class="tab" data-type="wifi">
+            WiFi
+          </button>
+
+          <button class="tab" data-type="email">
+            Email
+          </button>
+
+        </div>
+
+        <!-- URL -->
+        <div class="content-panel" id="url-panel">
+
+          <div class="field">
+
+            <label>Website URL</label>
+
+            <input
+              type="text"
+              id="url-input"
+              value="https://openai.com"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- TEXT -->
+        <div
+          class="content-panel hidden"
+          id="text-panel"
+        >
+
+          <div class="field">
+
+            <label>Plain Text</label>
+
+            <textarea id="text-input">
+Hello from QR Studio Pro
+            </textarea>
+
+          </div>
+
+        </div>
+
+        <!-- WIFI -->
+        <div
+          class="content-panel hidden"
+          id="wifi-panel"
+        >
+
+          <div class="row">
+
+            <div class="field">
+
+              <label>WiFi Name</label>
+
+              <input
+                type="text"
+                id="wifi-name"
+                placeholder="Home WiFi"
+              >
+
+            </div>
+
+            <div class="field">
+
+              <label>Password</label>
+
+              <input
+                type="text"
+                id="wifi-password"
+                placeholder="password123"
+              >
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- EMAIL -->
+        <div
+          class="content-panel hidden"
+          id="email-panel"
+        >
+
+          <div class="field">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              id="email-input"
+              placeholder="hello@example.com"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- CUSTOMIZATION -->
+        <div class="customization-section">
+
+          <div class="section-title">
+            Customization
+          </div>
+
+          <!-- COLORS -->
+          <div class="control-grid">
+
+            <div class="field">
+
+              <label>Foreground</label>
+
+              <div class="color-box">
+
+                <input
+                  type="color"
+                  id="foreground"
+                  value="#000000"
+                >
+
+                <span id="foreground-text">
+                  #000000
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="field">
+
+              <label>Background</label>
+
+              <div class="color-box">
+
+                <input
+                  type="color"
+                  id="background"
+                  value="#ffffff"
+                >
+
+                <span id="background-text">
+                  #ffffff
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- SIZE -->
+          <div class="field">
+
+            <label>QR Size</label>
+
+            <div class="range-wrap">
+
+              <input
+                type="range"
+                id="qr-size"
+                min="180"
+                max="450"
+                value="280"
+              >
+
+              <strong id="size-label">
+                280px
+              </strong>
+
+            </div>
+
+          </div>
+
+          <!-- PATTERNS -->
+          <div class="field">
+
+            <label>Pattern Style</label>
+
+            <div class="patterns">
+
+              <button
+                class="pattern active"
+                data-pattern="rounded"
+              >
+                Rounded
+              </button>
+
+              <button
+                class="pattern"
+                data-pattern="dots"
+              >
+                Dots
+              </button>
+
+              <button
+                class="pattern"
+                data-pattern="classy-rounded"
+              >
+                Classy
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- THEMES -->
+          <div class="field">
+
+            <label>Theme Presets</label>
+
+            <div class="theme-grid">
+
+              <button
+                class="theme active"
+                data-fg="#000000"
+                data-bg="#ffffff"
+              >
+                <div style="background:#000000"></div>
+                <div style="background:#ffffff"></div>
+              </button>
+
+              <button
+                class="theme"
+                data-fg="#1d4ed8"
+                data-bg="#eff6ff"
+              >
+                <div style="background:#1d4ed8"></div>
+                <div style="background:#eff6ff"></div>
+              </button>
+
+              <button
+                class="theme"
+                data-fg="#166534"
+                data-bg="#f0fdf4"
+              >
+                <div style="background:#166534"></div>
+                <div style="background:#f0fdf4"></div>
+              </button>
+
+              <button
+                class="theme"
+                data-fg="#7e22ce"
+                data-bg="#faf5ff"
+              >
+                <div style="background:#7e22ce"></div>
+                <div style="background:#faf5ff"></div>
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- LOGO -->
+          <div class="field">
+
+            <label>Upload Logo</label>
+
+            <div class="upload-box">
+
+              <input
+                type="file"
+                id="logo-upload"
+                accept="image/*"
+              >
+
+              <h3>Drop Logo Here</h3>
+
+              <p>
+                PNG, JPG, SVG supported
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="preview-card">
+
+      <div class="preview-title">
+        Live Preview
+      </div>
+
+      <div class="preview-subtitle">
+        Real-time QR generation
+      </div>
+
+      <div id="qr-preview"></div>
+
+      <div class="download-buttons">
+
+        <button
+          class="primary-btn"
+          id="download-png"
+        >
+          Download PNG
+        </button>
+
+        <button
+          class="secondary-btn"
+          id="download-svg"
+        >
+          Download SVG
+        </button>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
